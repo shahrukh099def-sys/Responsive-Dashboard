@@ -1,0 +1,38 @@
+.topbar {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background: white;
+    border-bottom: 1px solid #e6e9ee;
+
+    .profile-icon {
+        display: flex;
+        align-items: center;
+        gap: 5px
+    }
+
+    .left-humberger-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hamburger {
+        font-size: 1.25rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .brand {
+        font-weight: 600;
+        margin-left: 0.5rem;
+    }
+
+    // .spacer {
+    //
+    // flex: 1 1 auto;
+    // }
+}

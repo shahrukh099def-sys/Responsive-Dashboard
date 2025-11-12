@@ -1,0 +1,86 @@
+<section class="dashboard">
+    <div class="cards">
+        <div class="card" *ngFor="let c of cards">
+            <div class="chart-heading">
+                <h3>APP DOWNLOADS</h3>
+                <ul>
+                    <li *ngFor="let item of items" (click)="setActive(item)" [class.active]="item === activeItem"
+                        class="chart-item">
+                        {{ item }}
+                    </li>
+                </ul>
+
+            </div>
+            <div>
+
+                <p-chart type="bar" width="99%" height="40vh" type="bar" [data]="data" [options]="options" width="99%"
+                    height="40vh" [responsive]="true">
+                    <div style="position: relative; width: 99%; height: 40vh;"><canvas role="img" width="907"
+                            height="170"
+                            style="box-sizing: border-box; display: block; height: 170px; width: 907px;"></canvas></div>
+                </p-chart>
+                <li><a href="">See all ></a></li>
+            </div>
+            <!-- <div class="value">{{ c.value }}</div> -->
+        </div>
+    </div>
+    <div class="grid">
+        <div class="panel large card">
+            <h5>IN TRIAL SUBSCRIBERS</h5>
+            <h2>0</h2>
+            <a href="#">See all &gt;</a>
+        </div>
+
+        <div class="panel small card">
+            <h5>PAID SUBSCRIBERS</h5>
+            <h2 style="color: #f36e21;">18</h2> <!-- orange color like screenshot -->
+            <a href="#">See all &gt;</a>
+        </div>
+
+        <div class="panel small card">
+            <h5>CURRENT MRR</h5>
+            <h2 style="color: blue;">$0.00</h2>
+            <a href="#">See all &gt;</a>
+        </div>
+
+        <div class="panel medium">
+            <h2>App Launches</h2>
+            <p-chart type="line" [data]="appLaunchesData" [options]="appLaunchesOptions" width="99%" height="40vh"
+                [responsive]="true">
+            </p-chart>
+
+            <a href="#" class="see-all-link">See all &gt;</a>
+
+        </div>
+        <div class="image-panel-wrapper">
+            <img src="https://dev.nowcast.cc/assets/images/dashboard/corner-1.png" alt="">
+
+            <div class="panel medium">
+                <h5>Contacts</h5>
+                <h2 style="color: rgb(241, 173, 25);">1295</h2>
+                <a href="#">See all &gt;</a>
+            </div>
+        </div>
+
+        <div class="image-panel-wrapper">
+            <img src="https://dev.nowcast.cc/assets/images/dashboard/corner-2.png" alt="">
+
+            <div class="panel medium">
+                <h5>Leads</h5>
+                <h2 style="color: rgb(42, 138, 228);">0</h2>
+                <a href="#">See all &gt;</a>
+            </div>
+        </div>
+
+        <div class="image-panel-wrapper">
+            <img src="https://dev.nowcast.cc/assets/images/dashboard/corner-3.png" alt="">
+
+            <div class="panel medium">
+                <h5>Givings</h5>
+                <h2 style="color: grey;">$0.00</h2>
+                <a href="#">See all &gt;</a>
+            </div>
+        </div>
+
+    </div>
+</section>

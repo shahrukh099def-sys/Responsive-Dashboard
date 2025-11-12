@@ -1,0 +1,123 @@
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: #0f1724;
+    /* dark */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+
+    nav {
+        padding: 1rem 0;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                a {
+                    display: block;
+                    padding: 0.75rem 1rem;
+                    color: #cbd5e1;
+                    text-decoration: none;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.03);
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Sidebar footer */
+    .sidebar-footer {
+        margin-left: auto;
+    }
+
+    .sidebar-footer button {
+        position: absolute;
+        top: auto;
+        /* Adjust the top position */
+        left: 240px;
+        /* Position button at the end of the sidebar */
+        padding: 5px;
+        border: 1px solid #979696;
+        border-radius: 0 4px 4px 0;
+        background: #fff;
+        box-shadow: 1px 1px 6px #c9c9c9;
+        cursor: pointer;
+
+    }
+
+    &.closed {
+        width: 0;
+        min-width: 0;
+        overflow: hidden;
+
+        .sidebar-footer button {
+            top: auto;
+            left: 0;
+            border-radius: 0 4px 4px 0;
+            // z-index: 2000;
+        }
+    }
+}
+
+
+.sidebar.closed .sidebar-footer button {
+    position: fixed;
+    top: auto;
+    left: 0;
+    z-index: 999;
+}
+
+
+@media (max-width: 900px) {
+    .sidebar {
+        position: absolute;
+        z-index: 30;
+        height: 100vh;
+        transform: translateX(0);
+    }
+
+    .sidebar-footer button {
+        position: fixed;
+        /* always fixed on small screens */
+        top: auto;
+        left: 240px;
+        // z-index: 2000;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    /* When sidebar is open, blur the main area */
+    .app-container.sidebar-open .main-content {
+        filter: blur(5px);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    /* Dim overlay background */
+    .app-container.sidebar-open::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(2px);
+        z-index: 20;
+    }
+
+    /* Sidebar stays above blur */
+    .sidebar {
+        z-index: 30;
+    }
+}

@@ -1,0 +1,29 @@
+:host {
+    display: block;
+    height: 100vh;
+}
+
+.layout {
+    display: flex;
+    height: 100%;
+
+    .main {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+
+        .content {
+            padding: 1rem;
+            overflow: auto;
+            background: #f6f8fa;
+            height: calc(100vh - 64px);
+            
+        }
+    }
+}
+
+
+.layout.sidebar-closed app-sidebar {
+    width: 0;
+    min-width: 0;
+}
