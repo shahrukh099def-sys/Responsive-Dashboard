@@ -1,0 +1,14 @@
+<nav>
+    <a routerLink="playlist-channel" (click)="setActive('playlist-channel')"
+        [class.active]="activeLink === 'playlist-channel'">
+        Playlist Channel
+    </a>
+    <a routerLink="custom" (click)="setActive('custom')" [class.active]="activeLink === 'custom'">
+        Custom
+    </a>
+    <a routerLink="m3-u" (click)="setActive('m3-u')" [class.active]="activeLink === 'm3-u'">
+        M3U
+    </a>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+nav {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 3px 16px #878787 !important;
+    padding: 20px !important;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    a {
+        width: 40%;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        padding: 5px 30px;
+        color: black;
+        transition: all 0.3s ease; // Smooth transition for border change
+        text-decoration: none;
+
+        // Default state: no border
+        border-bottom: none;
+
+        // Apply border-bottom only to the active link
+        &.active {
+            border-bottom: 3px solid rgb(4, 4, 90);
+        }
+    }
+}

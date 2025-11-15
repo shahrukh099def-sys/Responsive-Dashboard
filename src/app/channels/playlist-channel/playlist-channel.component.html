@@ -1,0 +1,374 @@
+<form [formGroup]="playlistForm" (ngSubmit)="onSubmit()">
+    <div class="playlist-grid">
+
+        <div class="grid-item grid-1" formGroupName="channelDetails">
+            <h3>Create your own channel</h3>
+            <div class="form-group">
+                <label for="channelName">Channel Name <span class="required">*</span></label>
+                <input id="channelName" type="text" formControlName="channelName" placeholder="Enter channel name" />
+            </div>
+            <div class="form-group">
+                <label for="channelNumber">Channel Number</label>
+                <input id="channelNumber" type="text" formControlName="channelNumber"
+                    placeholder="Enter channel number" />
+            </div>
+            <div class="form-group">
+                <label for="channelCategory">Channel Category <span class="required">*</span></label>
+                <select id="channelCategory" formControlName="channelCategory">
+                    <option value="">Select Category</option>
+                    <option value="news">News</option>
+                    <option value="music">Music</option>
+                    <option value="sports">Sports</option>
+                    <option value="entertainment">Entertainment</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="3" formControlName="description"></textarea>
+            </div>
+        </div>
+
+        <div class="info-block grid-item grid-2">
+
+            <div class="info-heading">
+                Publish
+            </div>
+
+            <div class="planschoose">
+                <label class="form-group onediv active unpublished-status-container">
+                    <i class="fa fa-eye-slash activeIcon" aria-hidden="true"></i>
+                    <p>Unpublished</p>
+                </label>
+                <label class="form-group onediv">
+                    <i class="fa fa-upload" aria-hidden="true"></i>
+                    <p style="padding: 5px;">Published</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="grid-item grid-3">
+            <h3>Appearance</h3>
+            <div class="info-content info-share">
+                <ul class="artwork-list">
+                    <li>
+                        <div class="image-detail-container d-flex align-items-center pointer" (click)="openSidebar()">
+                            <span class="artwork-img square" style="background-color: rgb(189,188,188);">
+                                <img src="https://dev.nowcast.cc/image-service/api/v1/upload/load/7?height=200&width=200"
+                                    alt="" />
+                            </span>
+                            <span class="artwork-detail"><b>Simple Box</b> 1024 x 1024</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image-detail-container d-flex align-items-center pointer">
+                            <span class="artwork-img wide" style="background-color: rgb(189,188,188);">
+                                <img src="https://dev.nowcast.cc/image-service/api/v1/upload/load/10?height=270&width=480"
+                                    alt="" />
+                            </span>
+                            <span class="artwork-detail"><b>Poster Box</b> 1920 x 1080</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image-detail-container d-flex align-items-center pointer">
+                            <span class="artwork-img banner" style="background-color: rgb(190,189,189);">
+                                <img src="https://dev.nowcast.cc/image-service/api/v1/upload/load/715?height=150&width=415"
+                                    alt="" />
+                            </span>
+                            <span class="artwork-detail"><b>Landscape Box</b> 1920 x 692</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-item grid-4">
+            <div class="show-logo-container">
+                <div class="toggle-container">
+                    <p class="info-title">
+                        Do you want to show logo on player?
+                    </p>
+
+                    <!-- Bind the toggle button to the showLogo property -->
+                    <p-toggleButton onLabel="On" offLabel="Off" (onChange)="onToggleShowLogo($event)">
+                    </p-toggleButton>
+                </div>
+
+                <div class="para">
+                    <span class="para-text">
+                        Organization logo will be visible on player
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item grid-5">
+
+            <div class="logo">
+                <p>Logo</p>
+            </div>
+
+            <div class="grid-5-logo-container download-block form-group ng-star-inserted">
+                <div class="file-info">
+
+                    <div class="preview">
+                        <div class="preview-img-div"><img alt="" class="cls"
+                                src="https://dev.nowcast.cc/image-service/api/v1/upload/load/2657">
+                        </div>
+                    </div>
+
+                    <div>
+                        <p></p>
+                    </div>
+                </div>
+                <div dropdown="" class=" btn-group align-items-center open show">
+                    <span dropdowntoggle="" class="pointer toggle-dropdown" aria-haspopup="true"
+                        aria-expanded="true"><em ng-reflect-icon="toggle">
+                            <svg viewBox="0 0 16 16" fill="#000">
+                                <g>
+                                    <circle cx="2" cy="8" r="2"></circle>
+                                    <circle cx="8" cy="8" r="2"></circle>
+                                    <circle cx="14" cy="8" r="2"></circle>
+                                </g>
+                            </svg></em></span>
+                    <!-- <ul role="menu"
+                        class="dropdown-menu dropdown-menu-right ng-star-inserted show"
+                        style="inset: 100% 0px auto auto; transform: translateY(0px);">
+                        <li><a>Delete</a></li>
+                    </ul> -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Conditionally show/hide grid-6 div based on the showLogo property -->
+        <div *ngIf="showLogo" class="grid-item grid-6">
+            <div class="showlogo-container">
+                <div class="toggle-container">
+                    <p class="info-title">
+                        Show logo on right or left side of the player?
+                    </p>
+
+                    <p-toggleButton onLabel="Left" offLabel="Right" formControlName="logoOnRight"
+                        (onChange)="onLogoPositionChange($event)">
+                    </p-toggleButton>
+
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <span class="para-text">
+                        Organization logo will be visible on player
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="grid-row-pair">
+
+            <div class="grid-item grid-7">
+                <p>Video Preview</p>
+                <div>
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/048/802/034/small/natural-leather-structure-material-abstract-texture-background-for-design-natural-color-skin-material-fashion-design-wallpaper-black-wall-texture-background-for-graphic-design-and-web-design-photo.jpg"
+                        alt="No image">
+                </div>
+            </div>
+
+            <div class="grid-item grid-8" [ngClass]="logoOnRight ? 'right-pos' : 'left-pos'">
+                <div>
+                    <img src="https://dev.nowcast.cc/image-service/api/v1/upload/load/2657" alt="" class="cls">
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row-pair-two">
+            <div class="grid-item grid-9">
+                <ul class="grid-9-heading">
+                    <li>Videos</li>
+                    <li>Series</li>
+                </ul>
+
+                <div class="search-input">
+                    <div class="app-search" style="width: 59%; margin-bottom: 0;">
+                        <input type="text" placeholder="Search" name="searchInput" class="input" />
+                    </div>
+                    <button type="button">View All</button>
+                </div>
+
+                <div cdkDropList #videosList="cdkDropList" id="videosList" [cdkDropListData]="videos"
+                    [cdkDropListConnectedTo]="['playlistQueue']" (cdkDropListDropped)="drop($event)"
+                    class="drop-container scrollable-list">
+
+                    <div *ngFor="let video of videos" cdkDrag class="cdk-drag example-box fc-event" [id]="video.id">
+                        <div class="drag-drop-item">
+                            <div class="user-img-wide" style="background-color: rgb(189,188,188);">
+                                <img [src]="video.imageUrl" alt="" style="background-color: rgb(230,230,230);" />
+                            </div>
+                            <div class="recent-info">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <p class="pointer ellipsis-text-content mb-1" [title]="video.title">{{ video.title
+                                        }}</p>
+                                    <span class="grey-bg"
+                                        style="padding: 0 3px; border-radius: 1px; position: absolute; top: 2px; right: 2px; font-size: 10px;">
+                                        {{ video.type }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item grid-10" cdkDropList id="playlistQueue" [cdkDropListData]="queuedVideos"
+                [cdkDropListConnectedTo]="['videosList']" (cdkDropListDropped)="drop($event)">
+
+
+                <ul class="queue-grid-10">
+                    <li
+                        style="cursor: pointer; text-align: center; padding: 5px 30px; border-bottom: 3px solid rgb(4, 4, 90);">
+                        Daily Schedule
+                    </li>
+                    <li
+                        style="cursor: pointer; text-align: center; padding: 5px 30px; border-bottom: 3px solid transparent;">
+                        24/7 Loop
+                    </li>
+                </ul>
+
+                <p class="playInfo">This playlist will play till 11:59pm.</p>
+
+                <!-- Added items UI -->
+                <div *ngFor="let item of queuedVideos" cdkDrag class="cdk-drag example-box fc-event">
+                    <div class="drag-drop-item">
+                        <div class="user-img-wide" style="background-color: rgb(189,188,188);">
+                            <img [src]="item.imageUrl" alt="" style="background-color: rgb(230,230,230);" />
+                        </div>
+                        <div class="recent-info">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <p class="pointer ellipsis-text-content mb-1" [title]="item.title">
+                                    {{ item.title }}
+                                </p>
+                                <span class="grey-bg"
+                                    style="padding: 0 3px; border-radius: 1px; position: absolute; top: 2px; right: 2px; font-size: 10px;">
+                                    {{ item.type }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- <div class="grid-item grid-11">Grid 11</div> -->
+
+        <div class="grid-item grid-11 app-block mb-20 mt-4">
+            <div class="pricing-container">
+                <div class="info-title mb-2">
+                    Pricing
+
+                </div>
+                <div class="info-content">
+                    <div class="form-group" style="margin: 0;">
+                        <div class="planschoose" style="flex-direction: row; justify-content: space-between;">
+                            <label class="form-group onediv">
+                                <input type="radio" name="radio" value="FREE" id="" checked="" class="card-container"><i
+                                    aria-hidden="true" class="fa fa-gift">
+                                </i>
+                                <p>
+                                    Free for everyone
+                                </p>
+                            </label>
+                            <label class="form-group onediv">
+                                <input type="radio" name="radio" value="ACCESSREQUIRED" id="" checked=""
+                                    class="card-container"><i aria-hidden="true" class="fa fa-lock activeIcon">
+                                </i>
+                                <p style="padding: 5px;">Requires Free Account<br>(Email &amp; Phone)
+                                </p>
+                            </label>
+                            <label class="form-group onediv">
+                                <input type="radio" name="radio" value="PAID" id="" checked="" class="card-container"><i
+                                    aria-hidden="true" class="fa fa-credit-card">
+                                </i>
+                                <p style="padding: 5px;">
+                                    Requires Paid Subscription
+                                </p>
+                            </label>
+                            <!-- <label class="form-group onediv disabled">
+                                <input type="radio" name="radio" value="true" checked="" class="card-container">
+                                <i
+                                    aria-hidden="true" class="fa fa-handshake-o disabled"
+                                    ng-reflect-ng-class=",disabled,"></i>
+                                <p style="margin-top: 2px;" class="disabled">
+                                    one time purchase
+                                </p>
+                            </label> -->
+                        </div>
+                        <div class="row" style="padding: 0 15px;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="btn-container">
+            <button type="submit" [disabled]="!playlistForm.valid" class="btn btn-white mr-10 ng-star-inserted">
+                Save
+            </button>
+            <button type="button" class="btn btn-white">
+                Back
+            </button>
+        </div>
+
+
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar" [class.open]="showSidebar">
+
+            <!-- Close Button -->
+            <div class="right-sidebar-heading">
+                <h4>Appearance</h4>
+                <div class="close-btn" (click)="closeSidebar()">
+                    ❮
+                </div>
+            </div>
+
+            <ul class="custom-tabs mt-3">
+                <li [class.active]="activeTab === 'library'" (click)="setActiveTab('library')">
+                    Library
+                </li>
+
+                <li [class.active]="activeTab === 'stock'" (click)="setActiveTab('stock')">
+                    Stock
+                </li>
+            </ul>
+
+
+
+            <div class="sidebar-content">
+                <!-- <h3>Sidebar Content</h3> -->
+
+                <ul>
+                    <li *ngFor="let img of images">
+                        <img [src]="img" alt="sidebar-img" class="defaultImg"
+                            style="background-color: rgb(230,230,230); opacity: 0;" (load)="onImageLoad($event)">
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <!-- Overlay (optional) -->
+        <div class="overlay" *ngIf="showSidebar" (click)="closeSidebar()"></div>
+
+
+    </div>
+
+
+
+</form>
