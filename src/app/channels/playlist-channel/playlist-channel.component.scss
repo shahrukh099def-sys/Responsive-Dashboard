@@ -118,14 +118,93 @@
         font-size: 18px;
         color: #242e42;
         text-align: left;
-        margin-bottom: 15px;
+        // margin-bottom: 15px;
+        font-weight: unset;
+
+        margin: 0 0 12px;
+        // font: 400 14px / 20px Roboto, sans-serif;
     }
 }
 
+/* Resize the toggle button */
+::ng-deep .my-toggle .p-button {
+  width: 86px !important;
+  height: 25px !important;
+  margin-top: 2px !important;
+  padding: 0 !important;        /* prevents padding from increasing height */
+  font-size: 12px !important;   /* optional: fits text inside */
+  color: #ffffff;
+  background-color: #040e33;
+  border: none !important;
+//   border-shadow:none ;
+  border-color: #040e33 !important;
+  border-radius: 4px;
+}
 
-.grid-2 {
+
+.grid-random {
+
+    .grid-2-para {
+        font-size: 0.9vw !important;
+        color: grey;
+    }
+
+    .grid-2-btn {
+        button {
+            display: flex;
+            background-color: #fff;
+            cursor: pointer;
+            color: black;
+            width: 100%;
+            height: 40px;
+            justify-content: center;
+            border-radius: 4px;
+            margin: 13px 0px;
+            border: 1px solid grey;
+            font-size: 16px;
+            align-items: center;
+        }
+
+        button:hover {
+            color: #fff !important;
+            background: #010433 !important;
+            border-color: #010433 !important;
+        }
+    }
+}
+
+.grid-rm {
     grid-column: 2;
     grid-row: 1;
+    padding: 0px !important;
+
+    // .grid-2-para {
+    //     font-size: 0.9vw !important;
+    //     color: grey;
+    // }
+
+    // .grid-2-btn {
+    //     button {
+    //         display: flex;
+    //         background-color: #fff;
+    //         cursor: pointer;
+    //         color: black;
+    //         width: 100%;
+    //         height: 40px;
+    //         justify-content: center;
+    //         border-radius: 4px;
+    //         margin: 13px 0px;
+    //         border: 1px solid grey;
+    //         font-size: 16px;
+    //         align-items: center;
+    //     }
+
+    //     button:hover {
+    //         color: #fff !important;
+    //         background: #010433 !important;
+    //         border-color: #010433 !important;
+    //     }
+    // }
 
     .info-heading {
         text-align: center;
@@ -146,6 +225,12 @@
         font: 400 14px / 20px Roboto, sans-serif;
     }
 
+    // .myDiv label:first-of-type i:first-of-type {
+
+    .planschoose label:first-of-type i:first-of-type {
+        color: #1d41a7 !important;
+    }
+
     .planschoose {
         display: flex;
         flex-direction: column;
@@ -163,6 +248,113 @@
             align-items: center;
             border: 1px solid rgb(201, 194, 194);
             border-radius: 8px;
+
+            i {
+                text-align: center;
+                font-size: 55px;
+                color: #656565 !important;
+                margin-bottom: 5px;
+            }
+
+            p {
+                // margin: 0;
+                width: 178px;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.grid-2 {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0px !important;
+
+    // .grid-2-para {
+    //     font-size: 0.9vw !important;
+    //     color: grey;
+    // }
+
+    // .grid-2-btn {
+    //     button {
+    //         display: flex;
+    //         background-color: #fff;
+    //         cursor: pointer;
+    //         color: black;
+    //         width: 100%;
+    //         height: 40px;
+    //         justify-content: center;
+    //         border-radius: 4px;
+    //         margin: 13px 0px;
+    //         border: 1px solid grey;
+    //         font-size: 16px;
+    //         align-items: center;
+    //     }
+
+    //     button:hover {
+    //         color: #fff !important;
+    //         background: #010433 !important;
+    //         border-color: #010433 !important;
+    //     }
+    // }
+
+    .info-heading {
+        text-align: center;
+        display: block !important;
+        position: relative;
+
+        color: #fff;
+        background: #010433;
+        padding: 5px 20px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        font-size: 15px;
+        font-family: 'RobotoMedium';
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font: 400 14px / 20px Roboto, sans-serif;
+    }
+
+    // .myDiv label:first-of-type i:first-of-type {
+
+    .planschoose label:first-of-type i:first-of-type {
+        color: #1d41a7 !important;
+    }
+
+    .planschoose {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        padding: 15px 0;
+        justify-content: center;
+
+        label {
+            width: 150px;
+            height: 150px;
+            border: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(201, 194, 194);
+            border-radius: 8px;
+
+            i {
+                text-align: center;
+                font-size: 55px;
+                color: #656565 !important;
+                margin-bottom: 5px;
+            }
+
+            p {
+                // margin: 0;
+                width: 178px;
+                font-size: 14px;
+                text-align: center;
+            }
         }
     }
 }
@@ -176,7 +368,11 @@
     h3 {
         font-size: 18px;
         color: #242e42;
-        margin-bottom: 15px;
+        // margin-bottom: 15px;
+
+        font-weight: unset;
+        text-align: left;
+        margin: 0px 0 20px;
     }
 
     .info-content {
@@ -208,6 +404,7 @@
             align-items: center;
             cursor: pointer;
             transition: transform 0.2s ease;
+            height: 168px;
 
             &:hover {
                 transform: scale(1.03);
@@ -344,17 +541,38 @@
                 color: #242E42;
             }
 
+            /* ⭐ Correct styling for PrimeNG Toggle Button */
             p-toggleButton {
-                background: #040e33 !important;
-                color: #fff !important;
-                margin-bottom: 0px !important;
-                border-radius: 6px !important;
-                border-color: #cccccc !important;
-                font-size: 16px !important;
-                /* position: relative; */
-                top: 3% !important;
-                right: 10% !important;
-                transform: translate(35%, 50%) !important;
+                .p-togglebutton {
+                    .p-button {
+                        background: #040e33 !important;
+                        /* dark blue / black */
+                        border: none !important;
+                        color: #fff !important;
+                        border-radius: 8px !important;
+                        font-size: 16px !important;
+                        padding: 0.6rem 1.8rem !important;
+                        font-weight: 600 !important;
+                        min-width: 90px !important;
+                        height: 40px !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+                        /* smooth transition */
+                        transition: background .3s ease;
+                    }
+
+                    .p-button.p-highlight {
+                        background: #0b0b37 !important;
+                        /* active “Yes” color */
+                    }
+
+                    .p-button:hover {
+                        background: #0a0a45 !important;
+                    }
+                }
             }
         }
 
@@ -362,13 +580,18 @@
             font: 400 14px / 20px Roboto, sans-serif;
             color: #656565;
         }
-
     }
 }
+
 
 .grid-5 {
     grid-column: 1;
     grid-row: 4;
+
+    .logo {
+        font-size: 18px;
+        color: #242E42;
+    }
 
     .preview {
         width: 110px;
@@ -443,6 +666,14 @@
                 font-size: 18px;
                 color: #242E42;
             }
+
+            p-toggleButton {
+
+
+                width: 90px;
+                padding: 3px 0px;
+
+            }
         }
 
         .para-text {
@@ -486,6 +717,7 @@
         font-size: 20px;
         margin-bottom: 15px;
         text-align: left;
+        color: #242E42;
     }
 
     img {
@@ -515,8 +747,12 @@
         justify-content: flex-start; // default: LEFT
 
         img {
-            height: 30px;
+            // height: 30px;
+            // max-width: 80px;
+
+            height: 16px;
             max-width: 80px;
+            margin: 13px 5px;
         }
     }
 
@@ -559,6 +795,19 @@
     font-weight: 500;
     transition: background 0.2s ease;
 
+    .grey-bg {
+        background: #c7c7c7 !important;
+        color: #000 !important;
+
+        padding: 2px 3px;
+        border-radius: 1px;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        font-size: 10px;
+        border-radius: 1px;
+    }
+
     .drag-drop-item {
         display: flex;
         align-items: center;
@@ -570,6 +819,25 @@
         overflow-y: auto;
         overflow-x: hidden;
         padding-right: 5px;
+
+        .user-img-wide img {
+            width: 112px;
+            background-color: rgb(189, 188, 188);
+        }
+
+        .recent-info .info-p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+
+
+            p {
+                margin-left: -138px;
+                font: 400 14px / 20px Roboto, sans-serif;
+                cursor: pointer;
+            }
+        }
     }
 
     .search-input {
@@ -583,14 +851,29 @@
             margin: 0;
             padding-left: 15px;
             padding-right: 15px;
-            border-radius: 5px
+            border-radius: 5px;
+
+
+            border: 1px solid #696969 !important;
+            border-radius: 3px !important;
+            background: #fff !important;
+
         }
 
-        .app-search input {
-            font-size: 15px;
-            padding: 10px;
-            border-radius: 5px;
+        .app-search {
+
+            input {
+                font-size: 15px;
+                padding: 10px;
+                border-radius: 5px;
+
+                width: 100%;
+                border: 1px solid rgb(201, 194, 194);
+            }
+
+
         }
+
     }
 
     &:hover {
@@ -645,12 +928,12 @@
 
     /* Optional: style scrollbar */
     .scrollable-list::-webkit-scrollbar {
-        width: 6px;
+        width: 12px;
     }
 
     .scrollable-list::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 4px;
+        background: #242E42;
+        border-radius: 10px;
     }
 
     .queued-item {
@@ -672,6 +955,9 @@
     box-shadow: 1px 3px 16px #878787 !important;
     padding: 20px !important;
 
+
+
+
     .pricing-container {
         box-sizing: border-box;
 
@@ -689,7 +975,22 @@
             // flex-direction: row;
             justify-content: space-between;
 
+
+            /* Default icon color */
+            label i {
+                color: #656565;
+                transition: color 0.2s ease;
+            }
+
+            /* When a label's radio is checked → turn only its icon blue */
+            label input:checked+i {
+                color: #1d41a7
+                    /* or your preferred blue */
+            }
+
+
             .form-group {
+
                 display: flex;
                 align-items: center;
                 margin: 5px 0;
@@ -738,6 +1039,8 @@
     }
 }
 
+
+
 .mb-20 {
     margin-bottom: 20px !important;
 }
@@ -746,6 +1049,10 @@
 @media (max-width: 768px) {
     .grid-row-pair-two {
         flex-direction: column;
+    }
+
+    .grid-2 .planschoose label {
+        margin: 0px 8px;
     }
 
     .grid-9,
@@ -769,13 +1076,15 @@
 
 
 .grid-item {
-    background: #f5f5f5;
+    background: #fff;
+    box-shadow: 1px 3px 16px #878787 !important;
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 10px;
     font-weight: 500;
     transition: background 0.2s ease;
+    margin: 6px;
 }
 
 .form-group {
@@ -785,8 +1094,10 @@
     text-align: left;
 
     label {
-        font-weight: 600;
-        margin-bottom: 4px;
+        color: #656565;
+        margin-bottom: 2px;
+        position: relative;
+        font: 400 14px / 20px Roboto, sans-serif;
     }
 
     input,
@@ -848,8 +1159,9 @@
         height: 40px;
         border-radius: 4px;
         margin: 0px 5px;
-        border: transparent;
-        ;
+        // border: transparent;
+        border: 1px solid grey;
+        font-size: 16px;
     }
 
     .btn-white:hover {

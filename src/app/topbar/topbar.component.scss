@@ -4,8 +4,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background: white;
+    // background: white;
     border-bottom: 1px solid #e6e9ee;
+
+    margin-bottom: 8px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
 
     .profile-icon {
         display: flex;
@@ -17,6 +21,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0px 2px;
+
+        .brand {
+            color: #242E42;
+            // font-family: 'RobotoBold';
+            margin: 0;
+            font-size: 24px;
+            line-height: 1;
+        }
     }
 
     .hamburger {
@@ -24,6 +37,7 @@
         background: none;
         border: none;
         cursor: pointer;
+        margin-right: 10px;
     }
 
     .brand {

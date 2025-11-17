@@ -20,19 +20,20 @@ export class DashboardComponent {
 
   initializeChartData() {
     this.data = {
-      labels: ['January', 'February', 'March', 'April', 'May'],
+      labels: ['Jun 2025', 'Jul 2025', 'Aug 2025', 'Sept 2025', 'Oct 2025'],
       datasets: [
         {
           label: 'Sales 2025',
-          backgroundColor: '#42A5F5',
-          borderColor: '#1E88E5',
+          // backgroundColor: '#42A5F5',
+          backgroundColor: "purple",
+          borderColor: 'purple',
           borderWidth: 1,
           data: [120, 150, 180, 90, 200]
         },
         {
           label: 'Profit 2025',
-          backgroundColor: '#9CCC65',
-          borderColor: '#7CB342',
+          backgroundColor: 'red',
+          borderColor: 'red',
           borderWidth: 1,
           data: [80, 130, 150, 70, 160]
         }
@@ -161,7 +162,7 @@ export class DashboardComponent {
         },
         title: {
           display: true,
-          text: 'APP LAUNCHES',
+          // text: 'APP LAUNCHES',
           color: '#495057',
           font: {
             size: 16,

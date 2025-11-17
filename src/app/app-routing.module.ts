@@ -19,10 +19,10 @@ const routes: Routes = [
         path: 'channels',
         component: ChannelsComponent,
         children: [
+          { path: 'playlist-channel', component: PlaylistChannelComponent },
           { path: 'custom', component: CustomComponent },
           { path: 'm3-u', component: M3UComponent },
-          { path: 'playlist-channel', component: PlaylistChannelComponent },
-          { path: '', redirectTo: 'custom', pathMatch: 'full' } // optional default
+          { path: '', redirectTo: 'playlist-channel', pathMatch: 'full' } // optional default
         ]
       },
     ],

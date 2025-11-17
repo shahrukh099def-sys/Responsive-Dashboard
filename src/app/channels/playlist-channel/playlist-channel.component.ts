@@ -79,7 +79,73 @@ export class PlaylistChannelComponent implements OnInit {
     {
       id: 62369,
       title: 'MusicVibe',
-      type: 'Music',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62370,
+      title: 'Sportz',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62371,
+      title: 'Cartoon',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62372,
+      title: 'KingDom',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62373,
+      title: 'Discovery',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62373,
+      title: 'Discovery',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62373,
+      title: 'Discovery',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62373,
+      title: 'Discovery',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62373,
+      title: 'Discovery',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62373,
+      title: 'Discovery',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62373,
+      title: 'Discovery',
+      type: 'Livestream',
+      imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
+    },
+    {
+      id: 62373,
+      title: 'Discovery',
+      type: 'Livestream',
       imageUrl: 'https://dev.nowcast.cc/image-service/api/v1/upload/load/12?height=90&width=160'
     },
   ];
@@ -97,7 +163,7 @@ export class PlaylistChannelComponent implements OnInit {
         description: ['']
       }),
       logoOnRight: [false],
-      showLogo:[true]
+      showLogo: [true]
 
     });
   }
@@ -109,26 +175,26 @@ export class PlaylistChannelComponent implements OnInit {
       return;
     }
 
-    // If dragging FROM grid-9 (videosList) TO grid-10 (playlistQueue)
+
     const isFromVideosList = event.previousContainer.id === 'videosList';
     const isToQueue = event.container.id === 'playlistQueue';
 
     if (isFromVideosList && isToQueue) {
-      // COPY item (DO NOT REMOVE from original list)
+
       const item = event.previousContainer.data[event.previousIndex];
 
-      // Insert COPY into queue
+
       event.container.data.splice(event.currentIndex, 0, { ...item });
       return;
     }
 
-    // Default behavior for other cases: move normally
+
     const item = event.previousContainer.data[event.previousIndex];
 
-    // Remove from old list
+
     event.previousContainer.data.splice(event.previousIndex, 1);
 
-    // Add to new list
+
     event.container.data.splice(event.currentIndex, 0, item);
   }
 

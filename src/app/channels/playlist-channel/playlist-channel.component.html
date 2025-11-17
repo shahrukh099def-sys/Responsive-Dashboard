@@ -28,7 +28,21 @@
             </div>
         </div>
 
+        <div class="grid-random">
+
+            <div class="grid-2-btn d-flex justify-content-between mt-20 mb-20" style="flex-direction: column;">
+                <button ttype="submit" [disabled]="!playlistForm.valid" class="btn">Save</button>
+                <button type="button" class="btn btn-white">Back</button>
+            </div>
+            <p class="grid-2-para greyText dateFont ng-star-inserted">
+                Last saved on Nov 13, 2025 10:02
+                AM
+            </p>
+        </div>
+
         <div class="info-block grid-item grid-2">
+
+
 
             <div class="info-heading">
                 Publish
@@ -60,7 +74,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="image-detail-container d-flex align-items-center pointer">
+                        <div class="image-detail-container d-flex align-items-center pointer" (click)="openSidebar()">
                             <span class="artwork-img wide" style="background-color: rgb(189,188,188);">
                                 <img src="https://dev.nowcast.cc/image-service/api/v1/upload/load/10?height=270&width=480"
                                     alt="" />
@@ -69,7 +83,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="image-detail-container d-flex align-items-center pointer">
+                        <div class="image-detail-container d-flex align-items-center pointer" (click)="openSidebar()">
                             <span class="artwork-img banner" style="background-color: rgb(190,189,189);">
                                 <img src="https://dev.nowcast.cc/image-service/api/v1/upload/load/715?height=150&width=415"
                                     alt="" />
@@ -89,8 +103,11 @@
                     </p>
 
                     <!-- Bind the toggle button to the showLogo property -->
-                    <p-toggleButton onLabel="On" offLabel="Off" (onChange)="onToggleShowLogo($event)">
+                    <p-toggleButton onLabel="On" offLabel="Off" (onChange)="onToggleShowLogo($event)" class="my-toggle">
                     </p-toggleButton>
+
+
+
                 </div>
 
                 <div class="para">
@@ -149,7 +166,7 @@
                     </p>
 
                     <p-toggleButton onLabel="Left" offLabel="Right" formControlName="logoOnRight"
-                        (onChange)="onLogoPositionChange($event)">
+                        (onChange)="onLogoPositionChange($event)" class="my-toggle">
                     </p-toggleButton>
 
                 </div>
@@ -201,15 +218,14 @@
 
                     <div *ngFor="let video of videos" cdkDrag class="cdk-drag example-box fc-event" [id]="video.id">
                         <div class="drag-drop-item">
-                            <div class="user-img-wide" style="background-color: rgb(189,188,188);">
+                            <div class="user-img-wide">
                                 <img [src]="video.imageUrl" alt="" style="background-color: rgb(230,230,230);" />
                             </div>
                             <div class="recent-info">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="info-p">
                                     <p class="pointer ellipsis-text-content mb-1" [title]="video.title">{{ video.title
                                         }}</p>
-                                    <span class="grey-bg"
-                                        style="padding: 0 3px; border-radius: 1px; position: absolute; top: 2px; right: 2px; font-size: 10px;">
+                                    <span class="grey-bg">
                                         {{ video.type }}
                                     </span>
                                 </div>
@@ -274,8 +290,8 @@
                     <div class="form-group" style="margin: 0;">
                         <div class="planschoose" style="flex-direction: row; justify-content: space-between;">
                             <label class="form-group onediv">
-                                <input type="radio" name="radio" value="FREE" id="" checked="" class="card-container"><i
-                                    aria-hidden="true" class="fa fa-gift">
+                                <input type="radio" name="radio" value="FREE" id="" checked="" class="card-container">
+                                <i aria-hidden="true" class="fa fa-gift">
                                 </i>
                                 <p>
                                     Free for everyone
@@ -296,15 +312,7 @@
                                     Requires Paid Subscription
                                 </p>
                             </label>
-                            <!-- <label class="form-group onediv disabled">
-                                <input type="radio" name="radio" value="true" checked="" class="card-container">
-                                <i
-                                    aria-hidden="true" class="fa fa-handshake-o disabled"
-                                    ng-reflect-ng-class=",disabled,"></i>
-                                <p style="margin-top: 2px;" class="disabled">
-                                    one time purchase
-                                </p>
-                            </label> -->
+
                         </div>
                         <div class="row" style="padding: 0 15px;">
 
